@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>New Offer</h3>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="offerForm">
+          <div class="input-group form-group">
+            <div class="input-group-prepend"><span class="input-group-text prepend">Advertiser name:</span></div>
+            <div class="input-group-prepend">
+              <input type="text" class="form-control" placeholder="advertiser name" [(ngModel)]="offerData.advertiser_name" formControlName="advertiser_name">
+            </div>
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend"><span class="input-group-text prepend">URL:</span></div>
+            <div class="input-group-prepend">
+              <input type="text" class="form-control" placeholder="url" [(ngModel)]="offerData.url" formControlName="url">
+            </div>
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend"><span class="input-group-text prepend">Description:</span></div>
+            <div class="input-group-prepend">
+              <input type="text" class="form-control" placeholder="description" [(ngModel)]="offerData.description" formControlName="description">
+            </div>
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend"><span class="input-group-text prepend">Starts at:</span></div>
+            <div class="input-group-prepend">
+              <input type="text" class="form-control" placeholder="YYYY-mm-dd HH:MM" [(ngModel)]="offerData.starts_at" formControlName="starts_at" [textMask]="{mask: mask}">
+            </div>
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend"><span class="input-group-text prepend">Ends at:</span></div>
+            <div class="input-group-prepend">
+              <input type="text" class="form-control" placeholder="YYYY-mm-dd HH:MM" [(ngModel)]="offerData.ends_at" formControlName="ends_at" [textMask]="{mask: mask}">
+            </div>
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend"><span class="input-group-text prepend">Premium?</span></div>
+            <div class="input-group-text">
+              <input type="checkbox" [(ngModel)]="offerData.premium" formControlName="premium">
+            </div>
+          </div>
+
+          <div class="input-group form-group">
+            <input type="submit" value="Create" class="btn float-right btn-primary" (click)="submit()">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

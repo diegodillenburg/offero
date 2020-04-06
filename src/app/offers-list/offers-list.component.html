@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center h-100" style="margin-top: 1em;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Advertiser Name</th>
+        <th scope="col">URL</th>
+        <th scope="col">Description</th>
+        <th scope="col">Starts At</th>
+        <th scope="col">Ends at</th>
+        <th scope="col">Premium?</th>
+        <th scope="col">Admin Overriden State</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let offer of offersList">
+        <td>{{offer.advertiser_name}}</td>
+        <td>{{offer.url}}</td>
+        <td>{{offer.description}}</td>
+        <td>{{offer.starts_at}}</td>
+        <td>{{offer.ends_at}}</td>
+        <td>{{offer.premium}}</td>
+        <td>{{offer.admin_state_override ? 'Disabled' : 'Enabled'}}</td>
+        <td><button class="btn btn-secondary" (click)="overrideOffer(offer.id)">Override Status</button></td>
+        <td><button class="btn btn-secondary" (click)="deleteOffer(offer.id)">Delete Offer</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
